@@ -908,6 +908,7 @@ class FLVDemuxer {
             if (typeof meta.avcc !== 'undefined') {
                 // flush stashed samples if AVCDecoderConfigurationRecord is changed
                 this.seek && this.seek();
+                window._AVCDecoderChange && window._AVCDecoderChange()
                 Log.w(this.TAG, 'Found another AVCDecoderConfigurationRecord!');
             }
         }
